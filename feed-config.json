@@ -1,0 +1,274 @@
+{
+  "groups": [
+    {
+      "name": "Technology",
+      "emailSubject": "Technology Updates",
+      "feeds": [
+        {
+          "title": "Top Links | Hacker News",
+          "url": "https://feedpress.me/hacker-news-best"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Company Engineering Blogs",
+          "feeds": [
+            {
+              "title": "Engineering at Meta",
+              "url": "https://code.facebook.com/posts/rss"
+            },
+            {
+              "title": "Netflix TechBlog - Medium",
+              "url": "https://netflixtechblog.com/feed"
+            },
+            {
+              "title": "Instagram Engineering",
+              "url": "https://instagram-engineering.com/feed"
+            },
+            {
+              "title": "Google AI Blog",
+              "url": "https://ai.googleblog.com/feeds/posts/default"
+            },
+            {
+              "title": "Google Open Source Blog",
+              "url": "https://opensource.googleblog.com/feeds/posts/default"
+            },
+            {
+              "title": "Google Cloud - Community - Medium",
+              "url": "https://medium.com/feed/google-cloud"
+            },
+            {
+              "title": "Android Developers Blog",
+              "url": "https://feeds.feedburner.com/blogspot/hsDu"
+            }
+          ]
+        },
+        {
+          "name": "Personal Tech Blogs (English)",
+          "feeds": [
+            {
+              "title": "Product Growth",
+              "url": "https://www.aakashg.com/feed/"
+            },
+            {
+              "title": "Alex Molas Blog",
+              "url": "https://alexmolas.com/feed.xml"
+            },
+            {
+              "title": "seangoedecke.com RSS feed",
+              "url": "https://www.seangoedecke.com/rss.xml"
+            },
+            {
+              "title": "Without boats, dreams dry up",
+              "url": "https://without.boats/index.xml"
+            },
+            {
+              "title": "bitonic's blog.",
+              "url": "https://mazzo.li/rss.xml"
+            },
+            {
+              "title": "Domain Language",
+              "url": "https://www.domainlanguage.com/feed/"
+            },
+            {
+              "title": "On Life and Lisp",
+              "url": "https://rosenzweig.io/blog/gpu-feed.xml"
+            },
+            {
+              "title": "Event-Driven by Oskar Dudycz",
+              "url": "https://event-driven.io/rss.xml"
+            }
+          ]
+        },
+        {
+          "name": "Personal Tech Blogs (Chinese Traditional)",
+          "feeds": [
+            {
+              "title": "軟體考古學家",
+              "url": "https://blog.brachiosoft.com/index.xml"
+            },
+            {
+              "title": "Tsung's Blog",
+              "url": "https://feeds2.feedburner.com/tsungblog"
+            },
+            {
+              "title": "ihower { blogging }",
+              "url": "https://feeds.feedburner.com/ihower"
+            },
+            {
+              "title": "G. T. Wang",
+              "url": "https://blog.gtwang.org/feed/"
+            },
+            {
+              "title": "Ant ATField",
+              "url": "https://feeds.feedburner.com/yftzeng"
+            },
+            {
+              "title": "Complete Think",
+              "url": "https://rickhw.github.io/atom.xml"
+            },
+            {
+              "title": "轉個彎日誌",
+              "url": "https://blog.turn.tw/?feed=rss2"
+            },
+            {
+              "title": "資訊人權貴ㄓ疑",
+              "url": "https://ckhung0.blogspot.com/feeds/posts/default"
+            },
+            {
+              "title": "louie_lu's blog",
+              "url": "https://blog.louie.lu/feed/"
+            },
+            {
+              "title": "Stories by vgod&#39;s blog on Medium",
+              "url": "https://medium.com/feed/@vgod"
+            },
+            {
+              "title": "Gea-Suan Lin's BLOG",
+              "url": "https://blog.gslin.org/feed/"
+            }
+          ]
+        },
+        {
+          "name": "Personal Tech Blogs (Chinese Simplified)",
+          "feeds": [
+            {
+              "title": "王亟亟的博客",
+              "url": "https://blog.csdn.net/ddwhan0123/rss/list"
+            },
+            {
+              "title": "CJ Ting's Blog",
+              "url": "https://cjting.me/index.xml"
+            },
+            {
+              "title": "阮一峰的网络日志",
+              "url": "https://feeds.feedburner.com/ruanyifeng"
+            },
+            {
+              "title": "piglei",
+              "url": "https://www.zlovezl.cn/feeds/latest/"
+            },
+            {
+              "title": "简明现代魔法",
+              "url": "https://www.nowamagic.net/librarys/veda/feed/"
+            },
+            {
+              "title": "吴小龙同學",
+              "url": "https://wuxiaolong.me/atom.xml"
+            },
+            {
+              "title": "人生梦想",
+              "url": "https://acejoy.com/feed/"
+            },
+            {
+              "title": "blog-博客 - Kyligence",
+              "url": "https://cn.kyligence.io/blog-zh/feed/"
+            }
+          ]
+        },
+        {
+          "name": "Programming Languages",
+          "feeds": [
+            {
+              "title": "The Go Blog",
+              "url": "https://blog.golang.org/feeds/posts/default"
+            }
+          ]
+        },
+        {
+          "name": "History",
+          "feeds": [
+            {
+              "title": "Computer History Museum New Stories",
+              "url": "https://www.computerhistory.org/revolution/feed/new-stories-rss.xml"
+            }
+          ]
+        },
+        {
+          "name": "Tech News (Chinese)",
+          "feeds": [
+            {
+              "title": "Engadget 中文版",
+              "url": "https://chinese.engadget.com/rss.xml"
+            },
+            {
+              "title": "iThome Online",
+              "url": "https://www.ithome.com.tw/rss.php"
+            },
+            {
+              "title": "Techbang",
+              "url": "https://www.pcadv.com.tw/?feed=rss2"
+            },
+            {
+              "title": "電腦玩物",
+              "url": "https://playpcesor.blogspot.com/feeds/posts/default"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "emailSubject": "Finance Updates",
+      "feeds": [],
+      "groups": [
+        {
+          "name": "Fintech",
+          "feeds": [
+            {
+              "title": "Richard Gendal Brown",
+              "url": "https://gendal.me/feed/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Automotive",
+      "emailSubject": "Automotive Updates",
+      "feeds": [],
+      "groups": [
+        {
+          "name": "Racing",
+          "feeds": [
+            {
+              "title": "Formula 1 news - Autosport",
+              "url": "https://www.autosport.com/rss/feed/f1"
+            },
+            {
+              "title": "news RSS on motogp.com - The Official MotoGP Website",
+              "url": "https://www.motogp.com/en/news/rss"
+            }
+          ]
+        },
+        {
+          "name": "Motorcycles",
+          "feeds": [
+            {
+              "title": "Bike EXIF",
+              "url": "https://www.bikeexif.com/feed"
+            },
+            {
+              "title": "MOTO7 專業汽機車資訊",
+              "url": "https://www.moto7.net/feed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lifestyle",
+      "emailSubject": "Lifestyle Updates",
+      "feeds": [
+        {
+          "title": "端传媒 - 深度",
+          "url": "https://rsshub.app/initium/feature/zh-hans"
+        },
+        {
+          "title": "研之有物 │ 串聯您與中央研究院的橋梁",
+          "url": "https://research.sinica.edu.tw/feed/"
+        }
+      ]
+    }
+  ]
+}
