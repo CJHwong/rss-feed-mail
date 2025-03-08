@@ -1,0 +1,39 @@
+{
+  "groups": [
+    {
+      "name": "Technology",
+      "emailSubject": "Tech News Updates",
+      "feeds": [
+        {
+          "title": "Hacker News",
+          "url": "https://news.ycombinator.com/rss"
+        },
+        {
+          "title": "TechCrunch",
+          "url": "https://techcrunch.com/feed/"
+        }
+      ],
+      "groups": [
+        {
+          "name": "Programming",
+          "feeds": [
+            {
+              "title": "Dev.to",
+              "url": "https://dev.to/feed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "emailSubject": "Science Updates",
+      "feeds": [
+        {
+          "title": "NASA News",
+          "url": "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+        }
+      ]
+    }
+  ]
+}
