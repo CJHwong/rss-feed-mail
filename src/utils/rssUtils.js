@@ -1,7 +1,25 @@
+import https from 'https';
+
 import Parser from 'rss-parser';
 
-// Create a singleton parser instance
-const parser = new Parser();
+// Create custom HTTPS agent
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false, // Ignore certificate errors
+});
+
+// Configure parser with custom request function
+const parser = new Parser({
+  customFields: {
+    feed: [],
+    item: ['media:content'],
+  },
+  requestOptions: {
+    agent: httpsAgent,
+  },
+});
+
+// Add this constant at the top with other constants
+const MAX_REDIRECTS = 5;
 
 /**
  * Parse an RSS feed from a URL
@@ -39,16 +57,30 @@ export async function getFeedTitle(feedUrl, fallbackTitle) {
  * @param {string} feedUrl - URL of the feed
  * @param {Date} sinceDate - Date to filter items from
  * @param {string} fallbackTitle - Title to use if feed doesn't provide one
+ * @param {Object} options - Additional options for fetching
  * @returns {Promise<Object>} - Feed result with filtered items
  */
-export async function getFeedItems(feedUrl, sinceDate, fallbackTitle) {
+export async function getFeedItems(feedUrl, sinceDate, fallbackTitle, options = {}) {
   try {
-    const parsedFeed = await parseFeed(feedUrl);
+    // Configure parser with custom options including redirect support
+    const customParser = new Parser({
+      timeout: 10000, // 10 second timeout
+      headers: {
+        'User-Agent': 'RSS Feed Reader Bot/1.0', // Custom user agent
+      },
+      maxRedirects: MAX_REDIRECTS,
+      requestOptions: {
+        agent: httpsAgent,
+      },
+      ...options,
+    });
+
+    // Try to parse the feed
+    const parsedFeed = await customParser.parseURL(feedUrl);
     const title = parsedFeed.title || fallbackTitle;
 
-    // Filter items newer than sinceDate
+    // Filter and sort items
     let items = parsedFeed.items || [];
-
     if (sinceDate) {
       const lastFetchDate = new Date(sinceDate);
       items = items.filter((item) => {
@@ -75,7 +107,32 @@ export async function getFeedItems(feedUrl, sinceDate, fallbackTitle) {
       items: itemsWithMetadata,
     };
   } catch (error) {
-    console.error(`Error getting items from feed ${feedUrl}:`, error);
-    return null;
+    // Update error handling to ignore certificate errors
+    if (error.code === 'ERR_TLS_CERT_ALTNAME_INVALID') {
+      console.log(`Ignoring certificate validation for: ${feedUrl}`);
+      // Retry the request with certificate validation disabled
+      return getFeedItems(feedUrl, sinceDate, fallbackTitle, {
+        ...options,
+        requestOptions: { agent: httpsAgent },
+      });
+    }
+
+    // Add redirect-specific error handling
+    if (error.message.includes('Too many redirects')) {
+      console.warn(`Feed redirect limit (${MAX_REDIRECTS}) exceeded: ${feedUrl}`);
+    } else if (error.message.includes('Status code 301') || error.message.includes('Status code 302')) {
+      console.log(`Feed has moved: ${feedUrl}`);
+    } else if (error.message.includes('Status code 403') || error.message.includes('Status code 404')) {
+      console.log(`Feed unavailable (${error.message.slice(-3)}): ${feedUrl}`);
+    }
+    // Handle other specific error types with more detail
+    else if (error.message.includes('Feed not recognized')) {
+      console.warn(`Invalid feed format: ${feedUrl}`);
+    } else if (error.code === 'ETIMEDOUT') {
+      console.warn(`Feed request timed out: ${feedUrl}`);
+    } else {
+      console.error(`Error getting items from feed ${feedUrl}:`, error);
+    }
+    throw error;
   }
 }

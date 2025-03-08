@@ -42,7 +42,10 @@ async function fetchFeedWithRetry(feed, cursor) {
     const sinceDate = cursor[feed.url] || null;
     return await getFeedItems(feed.url, sinceDate, feed.title);
   } catch (error) {
-    console.error(`Error fetching feed ${feed.url}:`, error);
+    // Don't log for common HTTP errors as they're already logged in rssUtils
+    if (!error.message?.includes('Status code 403') && !error.message?.includes('Status code 404')) {
+      console.error(`Error fetching feed ${feed.url}:`, error);
+    }
     return null;
   }
 }
